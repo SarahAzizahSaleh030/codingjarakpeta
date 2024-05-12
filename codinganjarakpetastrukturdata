@@ -75,6 +75,7 @@ class Peta:
                     closest_city = city
             
             #hapus vertex u dari unvisited
+
             unvisited_cities.remove(closest_city)
             
             #perbarui nilai jarak dari semua vertex yang berdekatan
@@ -83,4 +84,49 @@ class Peta:
                 jarakNeighbor = distance[closest_city] + jarak
                 if jarakNeighbor < distance[neighbor]:
                     distance[neighbor] = jarakNeighbor
+
+
+
+
+
+
+
+petaJawaTimur = Peta()
+petaJawaTimur.tambahkanKota("Singosari") 
+petaJawaTimur.tambahkanKota("Purworedjo")
+petaJawaTimur.tambahkanKota("Ngoro")
+petaJawaTimur.tambahkanKota("Mojosari")
+petaJawaTimur.tambahkanKota("Kediri")
+petaJawaTimur.tambahkanKota("Badal")
+petaJawaTimur.tambahkanKota("Keras")
+petaJawaTimur.tambahkanKota("Tulungagung")
+petaJawaTimur.tambahkanKota("Blitar")
+petaJawaTimur.tambahkanKota("Wlingi")
+petaJawaTimur.tambahkanKota("Kepanjen")
+petaJawaTimur.tambahkanKota("Wagir")
+petaJawaTimur.tambahkanKota("Malang")
+
+petaJawaTimur.tambahkanJalan("Singosari","Purworedjo", 17)
+petaJawaTimur.tambahkanJalan("Purworedjo","Ngoro", 35)
+petaJawaTimur.tambahkanJalan("Ngoro","Mojosari", 12)
+petaJawaTimur.tambahkanJalan("Mojosari","Kediri", 86)
+petaJawaTimur.tambahkanJalan("Kediri","Badal", 8)
+petaJawaTimur.tambahkanJalan("Badal","Keras", 7)
+petaJawaTimur.tambahkanJalan("Keras","Tulungagung", 17)
+petaJawaTimur.tambahkanJalan("Tulungagung","Blitar", 35)
+petaJawaTimur.tambahkanJalan("Blitar","Wlingi", 21)
+petaJawaTimur.tambahkanJalan("Wlingi","Kepanjen", 40)
+petaJawaTimur.tambahkanJalan("Kepanjen","Wagir", 18)
+petaJawaTimur.tambahkanJalan("Wagir","Malang", 11)
+petaJawaTimur.tambahkanJalan("Malang","Singosari", 9)
+print('------------------------------')
+jarakSemuaKotaDariSingosari = petaJawaTimur.djikstra("Mojosari")
+print("Jarak kota berikut dari Mojosari adalah :")
+for city,distance in jarakSemuaKotaDariSingosari.items():
+    print(city," adalah ",distance," KM")
+    
+JawaTimur = ["Singosari","Keras","Malang"]
+print(permutations(JawaTimur))
+
+
         return distance
